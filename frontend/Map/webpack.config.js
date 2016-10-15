@@ -15,13 +15,13 @@ module.exports = {
 		}
 	},
   entry: [
-		'webpack-hot-middleware/client?path=http://localhost:3000/__webpack_hmr',
+		'webpack-hot-middleware/client',
 		path.join(__dirname,'frontend/main.js')
 	],
   output: {
     path: path.join(__dirname,'/dist/'),
     filename: '[name].js',
-    publicPath: 'http://localhost:3000/'
+    publicPath: '/'
   },
 	plugins: [
 		new HtmlWebpackPlugin({
