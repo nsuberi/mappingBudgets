@@ -10,17 +10,18 @@ module.exports = {
 		extensions: ['', '.js', '.scss', '.css', '.less'],
 		alias: {
 			leafletcss: path.join(__dirname, '/node_modules/leaflet/dist/leaflet.css'),
-			normalize: path.join(__dirname, '/node_modules/normalize.css/normalize.css')
+			normalize: path.join(__dirname, '/node_modules/normalize.css/normalize.css'),
+			bootstrap: path.join(__dirname, '/node_modules/bootstrap/less/bootstrap.less')
 		}
 	},
   entry: [
-		'webpack-hot-middleware/client?reload=true',
+		'webpack-hot-middleware/client?path=http://localhost:3000/__webpack_hmr',
 		path.join(__dirname,'frontend/main.js')
 	],
   output: {
     path: path.join(__dirname,'/dist/'),
     filename: '[name].js',
-    publicPath: '/'
+    publicPath: 'http://localhost:3000/'
   },
 	plugins: [
 		new HtmlWebpackPlugin({
@@ -47,6 +48,8 @@ module.exports = {
       test: /\.json?$/,
       loader: 'json'
     },
+
+
 		{ test: /\.scss$/, loaders:['style', 'css', 'sass']},
 		// image loading for leaflet images
 		{
@@ -61,6 +64,7 @@ module.exports = {
 		{test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/octet-stream" },
 		{test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file" },
 		{test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=image/svg+xml" }
+
 		/*{
       test: /\.css$/,
       loader: 'style!css?modules&localIdentName=[name]---[local]---[hash:base64:5]'
