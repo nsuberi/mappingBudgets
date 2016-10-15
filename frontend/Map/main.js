@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import GeoJsonContainer from './geojson_container';
+import FormContainer from './form_container'
 //require('style!css!normalize');
 //require('expose?$!expose?jQuery!jquery');
 //require('bootstrap-webpack');
@@ -12,7 +13,7 @@ export default class Main extends Component {
 	render() {
 		return (
 			<div id="MapUI">
-				<h1>GeoJsonContainers App</h1>
+				<h1>GeoJsonContainer App</h1>
 				<Grid>
 					<Row className="show-grid">
 
@@ -21,7 +22,7 @@ export default class Main extends Component {
 						</Col>
 
 						<Col lg={3} md={3} sm={3}>
-							<p>New Space</p>
+							<FormContainer/>
 						</Col>
 
 					</Row>
