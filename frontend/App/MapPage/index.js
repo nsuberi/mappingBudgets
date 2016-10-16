@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import GeoJsonContainer from './geojson_container';
-import FormContainer from './form_container'
+import GeoJsonContainer from '../Map/geojson_container';
+import FormContainer from '../Form/form_container'
 //require('style!css!normalize');
 //require('expose?$!expose?jQuery!jquery');
 //require('bootstrap-webpack');

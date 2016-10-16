@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 var ReactDOM = require('react-dom');
+
 import { connect } from 'react-redux';
+
 import {
 	fetchItems
 } from './geojson_actions';
-//import L from 'leaflet';
-import { Field as Field2, reduxForm } from 'redux-form';
-require('style!css!leafletcss')
 
 import { Map, TileLayer, GeoJson } from 'react-leaflet';
+
+require('style!css!leafletcss')
 
 export class GeoJsonContainer extends Component {
 
@@ -32,8 +33,7 @@ export class GeoJsonContainer extends Component {
 		layer.on({
 			click: function(e) {
 				layer.bindPopup(
-					'<form onSubmit={null}>	<div> <label htmlFor="Amount">Amount to Invest:</label> <Field2 name="Amount" component="input" type="text"/> </div><button type="submit">Submit</button>	</form>'
-				);
+				 "Select this lot in form."
 			}
 		})
 	}
@@ -73,10 +73,6 @@ export class GeoJsonContainer extends Component {
 		);
 	}
 }
-
-GeoJsonContainer = reduxForm({
-	form: 'container'
-})(GeoJsonContainer)
 
 	function mapStateToProps(state) {
 		return {
