@@ -7,7 +7,7 @@ import { createStore, applyMiddleware } from 'redux';
 
 import App from './App'
 import MapPage from './App/MapPage';
-import Budget from './App/BudgetPage'
+import BudgetPage from './App/BudgetPage'
 
 import reducers from './reducers';
 
@@ -25,7 +25,7 @@ ReactDOM.render((
 		<Router history={browserHistory}>
 			<Route path="/" component = {App} >
 				<IndexRoute component = {MapPage} />
-				<Route path="/budget" component={Budget} />
+				<Route path="/budget" component={BudgetPage} />
 			</Route>
 		</Router>
 	</Provider>

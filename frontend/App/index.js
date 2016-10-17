@@ -1,5 +1,4 @@
 var React = require('react');
-var connect = require('react-redux').connect;
 var ReactRouter = require('react-router');
 var Link = ReactRouter.Link;
 
