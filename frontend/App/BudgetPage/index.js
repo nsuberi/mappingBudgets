@@ -24,7 +24,7 @@ export class BudgetPage extends Component {
 		return (
 			<div id="Budget">
 				<p> Budget Goes Here </p>
-				<Griddle results={this.props.budgetItems} />
+				<Griddle results={this.props.budgetItems} resultsPerPage={15}/>
 			</div>
 
 		)
