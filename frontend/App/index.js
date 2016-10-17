@@ -18,4 +18,4 @@ var App = React.createClass({
   }
 });
 
-module.exports = connect(mapStateToProps, actions)(App);
+module.exports = App;

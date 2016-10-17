@@ -34,6 +34,7 @@ export class GeoJsonContainer extends Component {
 			click: function(e) {
 				layer.bindPopup(
 				 "Select this lot in form."
+			 )
 			}
 		})
 	}
