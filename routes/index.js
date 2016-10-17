@@ -26,7 +26,7 @@ router.get('/returnGeoJSON', function(req, res) {
 			return res.status(500).json({ success: false, data: err });
 		}
 
-    var fetchGeoJSONQuery = "SELECT ST_AsGeoJSON(geom) as geojson, parc_type, taxes FROM trenton_plots WHERE parc_type IN ('VACANT LOT', 'VACANT BUILDING');"
+    var fetchGeoJSONQuery = "SELECT gid, ST_AsGeoJSON(geom) as geojson, parc_type, taxes FROM trenton_plots WHERE parc_type IN ('VACANT LOT', 'VACANT BUILDING');"
 
     //client.query("INSERT INTO items(text, complete) values($1, $2)", [data.text, data.complete]);
 
@@ -51,9 +51,10 @@ router.get('/returnGeoJSON', function(req, res) {
 
           if(JSON.parse(results[i].geojson).coordinates[0].length===1){
             var newFeature = {
-              "type": "Feature",
-              "geometry":JSON.parse(results[i].geojson),
-              "properties": {
+              "type" : "Feature",
+              "geometry" : JSON.parse(results[i].geojson),
+              "properties" : {
+								"site_id" : results[i].gid,
                 "parc_type" : results[i].parc_type,
                 "taxes" : results[i].taxes
               }
@@ -73,6 +74,62 @@ router.get('/returnGeoJSON', function(req, res) {
 		})
 	})
 });
+
+router.post('/addBudgetItem', function(req, res){
+
+	console.log(req.body)
+	console.log(Object.keys(req.body).length)
+
+	if(Object.keys(req.body).length == 5){
+
+		pg.connect(connectionString, function(err, client, done) {
+
+			console.log("let's do this...")
+
+			if (err) {
+				done();
+				console.log(err);
+				return res.status(500).json({ success: false, data: err });
+			}
+
+			client.query("INSERT INTO budgetItems(siteid, agency, budgetamt, notes, ispriority) values($1, $2, $3, $4, $5)", [req.body.siteID, req.body.agency, req.body.budgetAmt, req.body.notes, req.body.isPriority]);
+
+		});
+
+	} else {
+
+		console.log("Missing information");
+
+	}
+
+});
+
+
+router.get('/returnBudgetItems', function(req, res) {
+	var results = [];
+
+	pg.connect(connectionString, function(err, client, done) {
+		if (err) {
+			done();
+			console.log(err);
+			return res.status(500).json({ success: false, data: err });
+		}
+
+    var fetchGeoJSONQuery = "SELECT * FROM budgetItems;"
+    var query = client.query(fetchGeoJSONQuery);
+
+		query.on('row', function(row) {
+			results.push(row);
+		})
+
+		query.on('end', function() {
+			done();
+			console.log(results);
+      res.send(results);
+		})
+	})
+});
+
 
 
 /*

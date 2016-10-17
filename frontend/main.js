@@ -9,7 +9,7 @@ import App from './App'
 import MapPage from './App/MapPage';
 import Budget from './App/BudgetPage'
 
-import reducers from './Map/reducers';
+import reducers from './reducers';
 
 var ReactRouter = require('react-router');
 var IndexRoute = ReactRouter.IndexRoute;

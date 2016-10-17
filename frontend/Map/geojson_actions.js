@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 export const FETCH_ITEMS = 'FETCH_ITEMS';
+export const SELECT_SITE_ID = 'SELECT_SITE_ID';
 /*
-export const UPDATE_ITEM = 'UPDATE_ITEM';
 export const DELETE_ITEM = 'DELETE_ITEM';
 export const ADD_ITEM = 'ADD_ITEM'
 */
@@ -13,6 +13,14 @@ export function fetchItems() {
 	return {
 		type: FETCH_ITEMS,
 		payload: request
+	};
+}
+
+export function selectSiteID(site_id) {
+
+	return {
+		type: SELECT_SITE_ID,
+		payload: site_id
 	};
 }
 

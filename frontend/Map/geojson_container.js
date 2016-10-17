@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 
 import {
 	fetchItems
+//	selectSiteID
 } from './geojson_actions';
 
 import { Map, TileLayer, GeoJson } from 'react-leaflet';
@@ -18,7 +19,8 @@ export class GeoJsonContainer extends Component {
 		this.state = {
 			center: [40.2171,-74.7429],
 			zoom:13,
-      geojson:null
+      geojson:null,
+		 	selectedId: null
 		}
 	}
 
@@ -32,11 +34,13 @@ export class GeoJsonContainer extends Component {
 	onEachFeature(feature, layer) {
 		layer.on({
 			click: function(e) {
-				layer.bindPopup(
-				 "Select this lot in form."
-			 )
+				layer.bindPopup("Lot ID: " + e.target.feature.properties.site_id);
 			}
 		})
+	}
+
+	setSiteID(siteID) {
+		this.setState({selectedId: siteID})
 	}
 
 	componentDidUpdate(prevProps, prevState) {
@@ -66,7 +70,7 @@ export class GeoJsonContainer extends Component {
 				{ this.state.geojson ?
 					<GeoJson
 						data={this.state.geojson}
-						onEachFeature={this.onEachFeature}
+						onEachFeature={this.onEachFeature.bind(this)}
 					/>
 					: null
 				}
