@@ -21,14 +21,3 @@ Project Manager: Once projects have been chosen, use MappingBudgets to assign mo
 Mayor’s Office Aide: Create story maps to share over social media to advertise city projects and get feedback from citizens.
 
 Mayoral Cabinet Meeting: Department heads assemble to show progress they’ve made and discuss Key Performance Indicators. These can be shown on the map to see how progress varies across the city. During the meeting notes can be taken on the map that will be designated as “works in progress” and in need of urban planner review.
-
-
-Walkthrough
-Main Page:
-
-
-
-Select a lot and fill in budget information:
-
-
-View budget items:
