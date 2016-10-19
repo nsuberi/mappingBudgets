@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { Field, reduxForm } from 'redux-form';
+import { Field, reduxForm, reset } from 'redux-form';
 import { connect } from 'react-redux'
 
 import axios from 'axios';
@@ -9,10 +9,11 @@ let FormContainer = (props) => {
 	const { handleSubmit } = props;
 
 	const submit = (values) => {
-		axios.post('/addBudgetItem', {...values})
+		axios.post('/addBudgetItem', {...values});
+		this.props.dispatchBudgetItem();
 	}
 
-		return(<form onSubmit={handleSubmit(submit)}>
+		return(<form onSubmit={handleSubmit(submit).bind(this)}>
 			<div>
 				<label>Site ID</label>
 				<div>
@@ -56,15 +57,16 @@ let FormContainer = (props) => {
 	}
 
 FormContainer = reduxForm({
-	form: 'container',
+	form: 'budgetItemForm',
   initialValues: { isPriority: false }
 })(FormContainer)
-/*
-FormContainer = connect(
-	state => ({
-		initialValues: state.siteID
-	}),
-	{}
+
+FormContainer = connect(()=>{return {}},
+	(dispatch) => {
+		return {
+			dispatchBudgetItem: () => reset('budgetItemForm')
+		}
+	}
 )(FormContainer)
-*/
+
 export default FormContainer;

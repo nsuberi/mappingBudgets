@@ -1,16 +1,34 @@
 #Postgres-Express-React-Redux todo app
 
-I made this app as I was trying to solidify my understanding of the above technologies.
+The Challenge:
 
-If you're interested in getting a copy of this running locally:
+Do more with less: City governments must provide services to a potentially growing population with shrinking budgets.
 
-1. Clone the repository to your local machine
-2. Run 'npm install' to install all the required modules
-3. Ensure that you have postgres installed on your machine, http://www.postgresql.org/
-4. Set up a local postgres database called 'todo' on your machine.
-	a. If you'd like to give it a different name, edit line 2 on models/database.js and change the end of the address to the name of your database.
-5. Run 'webpack' to compile all the react/redux
-6. Run 'npm start' to start the server
-7. Navigate to localhost:3000 in your browser to access the todolist site.
+Plan for the future and move purposefully towards it: Master planning exercises help to identify a vision for the city’s future, and these plans must be translated into daily work plans to achieve the chosen goals.
 
-If you have any issues along the way, feel free to email me at mikeyjc@gmail.com or send me a message on twitter at @mijcooper and I'll be happy to help you get this setup.
+
+MappingBudgets Vision
+
+All departments of city government will share a single interface for defining how they are spending their money. These plans will be shared to allow for greater collaboration between departments that lead to cost savings, increased quality of service, and therefore create neighborhoods where people want to live.
+
+
+User Stories
+
+Urban Planner: Login to MappingBudgets. Find a plot where you will do work. Create a budget line item. Create alternate scenarios. Bring these up at team meetings and debate which to include for an integrated city investment strategy.
+
+Project Manager: Once projects have been chosen, use MappingBudgets to assign monthly/weekly/daily work schedules to your teams and monitor progress. Use the map and budget interface at team meetings to discuss roadblocks / opportunities arising during the course of the project.
+
+Mayor’s Office Aide: Create story maps to share over social media to advertise city projects and get feedback from citizens.
+
+Mayoral Cabinet Meeting: Department heads assemble to show progress they’ve made and discuss Key Performance Indicators. These can be shown on the map to see how progress varies across the city. During the meeting notes can be taken on the map that will be designated as “works in progress” and in need of urban planner review.
+
+
+Walkthrough
+Main Page:
+
+
+
+Select a lot and fill in budget information:
+
+
+View budget items:
