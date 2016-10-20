@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 var ReactDOM = require('react-dom');
+var path = require('path');
+
+var pic1 = require('../../graphhopper/img/marker-icon-green.png');
+var pic2 = require('../../graphhopper/img/marker-icon.png');
 
 import { connect } from 'react-redux';
 
 require('style!css!leafletcss')
+require('style!css!./index.css')
 
 // Graph Hopper initialization
 
@@ -106,7 +111,7 @@ function setupRouteOptimizationAPI(map, ghOptimization, ghRouting) {
 
     L.NumberedDivIcon = L.Icon.extend({
         options: {
-            iconUrl: '../graphhopper/img/marker-icon.png',
+            iconUrl: pic2,
             number: '',
             shadowUrl: null,
             iconSize: new L.Point(25, 41),
@@ -135,7 +140,7 @@ function setupRouteOptimizationAPI(map, ghOptimization, ghRouting) {
         index = parseInt(index);
         if (index === 0) {
             new L.Marker([lat, lng], {
-                icon: new L.NumberedDivIcon({iconUrl: '../graphhopper/img/marker-icon-green.png', number: '1'}),
+                icon: new L.NumberedDivIcon({iconUrl: pic1, number: '1'}),
                 bounceOnAdd: true,
                 bounceOnAddOptions: {duration: 800, height: 200}
             }).addTo(routingLayer);
@@ -372,7 +377,10 @@ export default class TSPContainer extends Component {
 
 
 	render() {
-		console.log(this.state)
+    console.log("Directory:")
+		console.log(path.join(__dirname))
+    console.log(pic1)
+    console.log(pic2)
 		return (
 
       <div id="main">
@@ -418,7 +426,7 @@ export default class TSPContainer extends Component {
 
               <div className="clear"></div>
               <div id="vrp-map-wrapper">
-                  <div id="vrp-map" style={{"height": "400px"}} ></div>
+                  <div id="vrp-map" style={{"height": "400px", "width": "80%"}} ></div>
 
                   <div id="example-list">
                       <div>
