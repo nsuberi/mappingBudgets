@@ -1,4 +1,6 @@
-#Postgres-Express-React-Redux todo app
+#Mapping Budgets Prototype App
+
+See it in action at: https://mappingbudgets.herokuapp.com
 
 The Challenge:
 
