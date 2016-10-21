@@ -283,7 +283,7 @@ function setupRouteOptimizationAPI(map, ghOptimization, ghRouting) {
     $("#vrp_clear_button").click(clearMap);
 
     // Increase version if one of the examples change, see #2
-    var exampleVersion = 2;
+  /*  var exampleVersion = 2;
 
     $("#set_example_vrp").click(function () {
         $.getJSON("route-optimization-examples/vrp_lonlat_new.json?v=" + exampleVersion, function (jsonData) {
@@ -334,7 +334,7 @@ function setupRouteOptimizationAPI(map, ghOptimization, ghRouting) {
             ghOptimization.doRequest(jsonData, optimizeResponse);
         });
     });
-
+*/
     $("#optimize_button").click(optimizeRoute);
 }
 
@@ -413,7 +413,8 @@ export default class TSPContainer extends Component {
               <div>
                   The Route Optimization API gets several locations and vehicles as input and calculates the best
                   route for every of the vehicles, where several constraints like capacity or time windows can be added.
-                  Click on the map to add locations and then click 'optimize' or just on one of the examples.
+                  Click on the map to add locations and then click 'optimize'. Make sure to specify the number of vehicles to use
+                  in your solution.
               </div>
 
               <div id="button-list" className="right">
@@ -425,7 +426,7 @@ export default class TSPContainer extends Component {
 
               <div className="clear"></div>
               <div id="vrp-map-wrapper">
-                  <div id="vrp-map" style={{"height": "400px", "width": "80%"}} ></div>
+                  <div id="vrp-map" style={{"height": "400px", "width": "100%"}} ></div>
 
                   <div id="example-list">
                       <div>
