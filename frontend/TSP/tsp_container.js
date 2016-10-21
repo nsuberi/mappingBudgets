@@ -351,9 +351,8 @@ function createMap(divId) {
         attribution: osmAttr
     });
 
-    var map = L.map(divId, {layers: [omniscale]});
+    var map = L.map(divId, {layers: [osm]});
     L.control.layers({
-        "Omniscale": omniscale,
         "OpenStreetMap": osm}).addTo(map);
     return map;
 }
@@ -418,7 +417,7 @@ export default class TSPContainer extends Component {
               </div>
 
               <div id="button-list" className="right">
-                  vehicles:
+                  Number of vehicles to use (required):
                   <input id="optimize_vehicles" type="number" min="1" max="4"/>
                   <button id="optimize_button">Optimize</button>
                   <button id="vrp_clear_button">Clear</button>
