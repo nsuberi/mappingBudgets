@@ -85,6 +85,10 @@ export class GeoJsonContainer extends Component {
 		}
 	}
 
-	export default connect(mapStateToProps, {
-		fetchItems
-	})(GeoJsonContainer);
+	function mapDispatchToProps(state){
+		return {
+			fetchItems
+		}
+	}
+
+	export default connect(mapStateToProps, mapDispatchToProps)(GeoJsonContainer);

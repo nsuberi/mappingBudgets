@@ -9,6 +9,7 @@ import App from './App'
 import MapPage from './App/MapPage';
 import BudgetPage from './App/BudgetPage'
 import TSPPage from './App/TSPPage'
+import EditPage from './App/EditPage'
 
 import reducers from './reducers';
 
@@ -28,6 +29,7 @@ ReactDOM.render((
 				<IndexRoute component = {MapPage} />
 				<Route path="/budget" component={BudgetPage} />
 				<Route path="/tsp" component={TSPPage} />
+				<Route path="/edit" component={EditPage} />
 			</Route>
 		</Router>
 	</Provider>
