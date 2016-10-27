@@ -92,7 +92,7 @@ router.post('/addBudgetItem', function(req, res){
 				return res.status(500).json({ success: false, data: err });
 			}
 
-			client.query("INSERT INTO budgetItems(siteid, agency, budgetamt, notes, ispriority) values($1, $2, $3, $4, $5)", [req.body.siteID, req.body.agency, req.body.budgetAmt, req.body.notes, req.body.isPriority]);
+			client.query("INSERT INTO budgetitems(siteid, agency, budgetamt, notes, ispriority) values($1, $2, $3, $4, $5)", [req.body.siteID, req.body.agency, req.body.budgetAmt, req.body.notes, req.body.isPriority]);
 
 		});
 
@@ -115,7 +115,7 @@ router.get('/returnBudgetItems', function(req, res) {
 			return res.status(500).json({ success: false, data: err });
 		}
 
-    var fetchGeoJSONQuery = "SELECT * FROM budgetItems;"
+    var fetchGeoJSONQuery = "SELECT * FROM budgetitems;"
     var query = client.query(fetchGeoJSONQuery);
 
 		query.on('row', function(row) {
