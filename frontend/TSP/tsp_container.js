@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 var ReactDOM = require('react-dom');
 var path = require('path');
 
-var pic1 = require('../../graphhopper/img/marker-icon-green.png');
-var pic2 = require('../../graphhopper/img/marker-icon.png');
+var pic1 = require('../../utils/graphhopper/img/marker-icon-green.png');
+var pic2 = require('../../utils/graphhopper/img/marker-icon.png');
 
 import { connect } from 'react-redux';
 
@@ -13,9 +13,9 @@ require('style!css!./index.css')
 // Graph Hopper initialization
 
 import L from 'leaflet';
-import { GHUtil, GHInput, graphhopper } from '../../graphhopper/GHUtil';
-import { GraphHopperOptimization } from '../../graphhopper/GHOptimizer';
-import { GraphHopperRouting } from '../../graphhopper/GHRouting';
+import { GHUtil, GHInput, graphhopper } from '../../utils/graphhopper/GHUtil';
+import { GraphHopperOptimization } from '../../utils/graphhopper/GHOptimizer';
+import { GraphHopperRouting } from '../../utils/graphhopper/GHRouting';
 
 var host;// = "http://localhost:9000/api/1";
 var defaultKey = "8fadfc65-e464-46a7-9680-f321678f4275";

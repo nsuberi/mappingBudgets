@@ -13,12 +13,29 @@ export default class EditControlExample extends Component {
 
   _onEditPath(e) {
     console.log('Path edited !');
+    console.log(e)
   }
 
   _onCreate(e) {
     polyline = e.layer;
     // To edit this polyline call : polyline.handler.enable()
     console.log('Path created !');
+    console.log(e.target._layers);
+    for (let layer of Object.keys(e.target._layers) ) {
+
+        if(e.target._layers[layer]._path) {
+          console.log(layer)
+          layer = e.target._layers[layer];
+          if(layer._latlng){
+            console.log("its a circle")
+            console.log(layer._latlng)
+          }
+          if(layer._latlngs){
+            console.log("its a line or polygon")
+            console.log(layer._latlngs)
+          }
+        }
+    }
   }
 
   _onDeleted(e) {
@@ -33,8 +50,22 @@ export default class EditControlExample extends Component {
     console.log('Edit is starting !');
   }
 
-  _onEditStop() {
+  _onEditStop(e) {
     console.log('Edit is stopping !');
+    console.log(e.target._layers)
+    for (let layer of Object.keys(e.target._layers) ) {
+        layer = e.target._layers[layer]
+        if(layer._path) {
+          if(layer._latlng){
+            console.log("its a circle")
+            console.log(layer._latlng)
+          }
+          if(layer._latlngs){
+            console.log("its a line or polygon")
+            console.log(layer._latlngs)
+          }
+        }
+    }
   }
 
   _onDeleteStart() {

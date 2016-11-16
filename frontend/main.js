@@ -18,6 +18,28 @@ var IndexRoute = ReactRouter.IndexRoute;
 var Router = ReactRouter.Router;
 var Route = ReactRouter.Route;
 import { browserHistory } from 'react-router';
+/*
+const auth = new AuthService(__AUTH0_CLIENT_ID__, __AUTH0_DOMAIN__);
+
+// validate authentication for private routes
+const requireAuth = (nextState, replace) => {
+  if (!auth.loggedIn()) {
+    replace({ pathname: '/login' })
+  }
+}
+
+put in render:
+
+<Route path="/" component = {App} auth = {auth}>
+
+  <IndexRoute component = {MapPage} />
+  <Route path="/budget" component={BudgetPage} />
+  <Route path="/tsp" component={TSPPage} />
+  <Route path="/edit" component={EditPage} onEnter={requireAuth} />
+	<Route path="login" component={Login} />
+
+</Route>
+*/
 
 const logger = createLogger({collapsed: true});
 const createStoreWithMiddleware = applyMiddleware(promise, logger)(createStore);
@@ -25,12 +47,17 @@ const createStoreWithMiddleware = applyMiddleware(promise, logger)(createStore);
 ReactDOM.render((
 	<Provider store={createStoreWithMiddleware(reducers)}>
 		<Router history={browserHistory}>
+
 			<Route path="/" component = {App} >
+
 				<IndexRoute component = {MapPage} />
 				<Route path="/budget" component={BudgetPage} />
 				<Route path="/tsp" component={TSPPage} />
 				<Route path="/edit" component={EditPage} />
+
+
 			</Route>
+
 		</Router>
 	</Provider>
 ), document.getElementById('root'));
