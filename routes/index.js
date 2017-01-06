@@ -3,7 +3,9 @@ var path = require('path');
 var router = express.Router();
 var pg = require('pg');
 pg.defaults.ssl = true;
-var connectionString = require(path.join(__dirname, '../', 'config'));
+var connectionString = process.env['CONN']
+
+// require(path.join(__dirname, '../', 'config'));
 
 /* GET home page. */
 /*router.get('/', function(req, res, next) {
