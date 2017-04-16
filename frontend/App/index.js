@@ -8,9 +8,9 @@ var App = React.createClass({
     return (
       <div className="main-app">
         <ul className="nav-bar">
+          <li className="nav-item"><Link to="/">See Budget example</Link></li>
           <li className="nav-item"><Link to="/map">See Map</Link></li>
           <li className="nav-item"><Link to="/tsp">See TSP example</Link></li>
-          <li className="nav-item"><Link to="/">See Budget example</Link></li>
           <li className="nav-item"><Link to="/edit">See Map Edit example</Link></li>
           <li className="nav-item"><Link to="/allocaid">See Allocating Aid example</Link></li>
         </ul>
