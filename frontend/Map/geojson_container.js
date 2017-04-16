@@ -63,10 +63,10 @@ export class GeoJsonContainer extends Component {
 				zoom={this.state.zoom}
 			  style={{"height": "100vh"}}
 			>
-				<TileLayer
+			/*	<TileLayer
 					attribution='&copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 					url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
-			/>
+			/>*/
 				{ this.state.geojson ?
 					<GeoJson
 						data={this.state.geojson}
