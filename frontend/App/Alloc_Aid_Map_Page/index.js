@@ -21,8 +21,7 @@ export default class Main extends Component {
 						</Col>
 
 						<Col lg={3} md={3} sm={3}>
-							// <FormContainer/>
-							// replace with griddle table to display ranked list
+
 						</Col>
 
 					</Row>
