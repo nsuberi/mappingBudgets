@@ -49,12 +49,12 @@ export class AllocAidContainer extends Component {
     if (!this.state.alloc_aid_geojson && this.props.alloc_aid_geojson.length !== 0) {
 			this.setState({
 				alloc_aid_geojson: this.props.alloc_aid_geojson
-			}
+			})
 			console.log(this.props.alloc_aid_geojson),
 			() => {
 				console.log("Geojson to be loaded")
 				console.log("adding geojsonlayer")
-			})
+			}
 		}
   }
 
