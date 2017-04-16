@@ -71,7 +71,7 @@ router.get('/returnGeoJSON', function(req, res) {
         }
 
         console.log(JSON.stringify(featureCollection.features.slice(0,20)))
-        res.send(featureCollection);
+        //res.send(featureCollection);
 
 		})
 	})
