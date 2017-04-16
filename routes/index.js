@@ -132,7 +132,30 @@ router.get('/returnBudgetItems', function(req, res) {
 	})
 });
 
+router.get('/returnMap', function(req, res) {
+	var results = [];
 
+	pg.connect(connectionString, function(err, client, done) {
+		if (err) {
+			done();
+			console.log(err);
+			return res.status(500).json({ success: false, data: err });
+		}
+
+    var fetchGeoJSONQuery = "SELECT * FROM joined_data;"
+    var query = client.query(fetchGeoJSONQuery);
+
+		query.on('row', function(row) {
+			results.push(row);
+		})
+
+		query.on('end', function() {
+			done();
+			console.log(results);
+      res.send(results);
+		})
+	})
+});
 
 /*
 

@@ -10,7 +10,7 @@ import MapPage from './App/MapPage';
 import BudgetPage from './App/BudgetPage'
 import TSPPage from './App/TSPPage'
 import EditPage from './App/EditPage'
-import AllocatingAidPage from './App/AllocatingAidPage'
+import AllocatingAidPage from './App/Alloc_Aid_Map_Page'
 
 import reducers from './reducers';
 
@@ -55,7 +55,7 @@ ReactDOM.render((
 				<Route path="/budget" component={BudgetPage} />
 				<Route path="/tsp" component={TSPPage} />
 				<Route path="/edit" component={EditPage} />
-
+				<Route path="/allocaid" component={AllocatingAidPage} />
 
 			</Route>
 
