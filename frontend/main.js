@@ -10,6 +10,7 @@ import MapPage from './App/MapPage';
 import BudgetPage from './App/BudgetPage'
 import TSPPage from './App/TSPPage'
 import EditPage from './App/EditPage'
+import AllocatingAidPage from './App/AllocatingAidPage'
 
 import reducers from './reducers';
 
