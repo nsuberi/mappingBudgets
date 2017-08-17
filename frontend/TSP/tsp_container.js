@@ -18,7 +18,7 @@ import { GraphHopperOptimization } from '../../utils/graphhopper/GHOptimizer';
 import { GraphHopperRouting } from '../../utils/graphhopper/GHRouting';
 
 var host;// = "http://localhost:9000/api/1";
-var defaultKey = "8fadfc65-e464-46a7-9680-f321678f4275";
+var defaultKey = "4479aacb-e1f7-4857-8f98-225d514e82ed";
 var profile = "car";
 
 import $ from 'jquery';
