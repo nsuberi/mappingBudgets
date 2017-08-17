@@ -1,6 +1,6 @@
 #Mapping Budgets Prototype App, https://github.com/nsuberi/mappingBudgets/
 
-See it in action at: https://mappingbudgets.herokuapp.com
+See it in action at: https://mappingbudgets2.herokuapp.com
 
 The Challenge:
 
