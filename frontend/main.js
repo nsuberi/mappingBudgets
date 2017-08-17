@@ -51,9 +51,9 @@ ReactDOM.render((
 
 			<Route path="/" component = {App} >
 
-				<IndexRoute component = {BudgetPage} />
+				<IndexRoute component = {MapPage} />
 				<Route path="/tsp" component={TSPPage} />
-				<Route path="/map" component={MapPage} />
+				<Route path="/map" component={BudgetPage} />
 				<Route path="/edit" component={EditPage} />
 				<Route path="/allocaid" component={AllocatingAidPage} />
 
